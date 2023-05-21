@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <title>Project</title>
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body class="text-light bg-dark">
+  <div class="container">
+    <h1 class="text-center">Length Conversion Calculator</h1>
+    <div class="form-group">
+      <input type="number" id="inputFeet" class="form-control" step="any" placeholder="Feet">
+    </div>
+    <div class="form-group">
+      <input type="number" id="inputMeters" class="form-control" step="any" placeholder="Meters">
+    </div>
+    <button class="btn btn-primary" onclick="convertFeetToMeters()">Convert to Meters</button>
+    <button class="btn btn-primary" onclick="convertMetersToFeet()">Convert to Feet</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function convertFeetToMeters() {
+      var feet = document.getElementById('inputFeet').value;
+      if (!feet) {
+        document.getElementById('result').innerHTML = "Invalid input!";
+        return;
+      }
+      var meters = feet * 0.3048;
+      document.getElementById('result').innerHTML = feet + ' feet is equal to ' + meters + ' meters.';
+    }
+
+    function convertMetersToFeet() {
+      var meters = document.getElementById('inputMeters').value;
+      if (!meters) {
+        document.getElementById('result').innerHTML = "Invalid input!";
+        return;
+      }
+      var feet = meters * 3.28084;
+      document.getElementById('result').innerHTML = meters + ' meters is equal to ' + feet + ' feet.';
+    }
+  </script>
+</body>
+</html>
